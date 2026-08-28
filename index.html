@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조은지 | 포트폴리오</title>
+  <!-- 분리된 외부 CSS 파일 연결 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 상단 네비게이션바 -->
+  <header class="top-nav">
+    <div class="brand">
+      <div class="brand-avatar" aria-label="캐릭터 아바타">E</div>
+      <div class="logo">Eunji's Portfolio</div>
+    </div>
+    <nav class="top-nav-links">
+      <a href="#about" class="active">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- 자기소개 영역 (호스트 카드 스타일) -->
+    <section id="about">
+      <div class="host-card">
+        <div class="host-header">
+          <div class="host-avatar-lg" aria-label="호스트 프로필 이미지">E</div>
+          <div class="host-title-group">
+            <h2>조은지 (Eunji Cho)</h2>
+            <p class="host-meta">Statistics & Economics · ADsP Certified</p>
+          </div>
+        </div>
+        
+        <div class="host-body">
+          <p>통계학과 경제학을 전공하며 정량적 모델링과 데이터 분석을 통해 가치 있는 인사이트를 발굴합니다. 복잡한 데이터를 다루는 공모전과 언어 모델 프로젝트부터 핀테크 기획까지, 문제를 구조화하고 사용자 중심의 최적화 솔루션을 설계하는 과정을 즐깁니다.</p>
+        </div>
+        
+        <a href="#contact" class="btn-secondary">Contact host</a>
+      </div>
+    </section>
+
+    <!-- 프로젝트 및 경험 소개 영역 -->
+    <section id="projects">
+      <h2 class="section-title">Projects & Experiences</h2>
+      
+      <!-- Grid 대신 Flexbox를 사용한 프로젝트 리스트 -->
+      <div class="project-container">
+        
+        <article class="project-card">
+          <div class="card-image">
+            <img src="image/heatline.png" alt="한화생명 Health-Asset 서비스 기획">
+          </div>
+          <div class="card-content">
+            <h3>도로 열선 최적화</h3>
+            <p>온도, 강수량, 교통량 등 공간 데이터를 분석하여 도로 열선 우선 설치 구역을 도출하는 최적화 모델 설계</p>
+            <div class="tech-stack">
+              <span class="tech-tag">Data Analysis</span>
+              <span class="tech-tag">Optimization</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="card-image">[이미지] 추가 예정</div>
+          <div class="card-content">
+            <h3>우리 WON IT프로젝트</h3>
+            <p>잘하고싶다...</p>
+            <div class="tech-stack">
+              <span class="tech-tag">추가예정</span>
+              <span class="tech-tag">추가예정</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="card-image">
+            <img src="image/h2c.png" alt="한화생명 Health-Asset 서비스 기획">
+          </div>
+          <div class="card-content">
+            <h3>Health to Cash (H2C) 핀테크 기획</h3>
+            <p>보험 리스크 피드백 모델을 통한 동적 프리미엄 차액의 연금 전환 서비스 기획안 (Hanwha Life Future Financier)</p>
+            <div class="tech-stack">
+              <span class="tech-tag">Fintech</span>
+              <span class="tech-tag">Economic Modeling</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="footer-content">
+      <p>Contact: jej41837@gmail.com</p>
+      <p class="legal-text">© 2026 Eunji Cho. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

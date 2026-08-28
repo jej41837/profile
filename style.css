@@ -1,0 +1,299 @@
+@charset "utf-8";
+
+/* --- Airbnb Design System Tokens --- */
+:root {
+  --color-primary: #ff385c;
+  --color-primary-active: #e00b41;
+  --color-ink: #222222;
+  --color-body: #3f3f3f;
+  --color-muted: #6a6a6a;
+  --color-canvas: #ffffff;
+  --color-surface-soft: #f7f7f7;
+  --color-hairline: #dddddd;
+  
+  --font-family: 'Circular', -apple-system, system-ui, Roboto, 'Helvetica Neue', sans-serif;
+  
+  --rounded-sm: 8px;
+  --rounded-md: 14px;
+  --rounded-full: 9999px;
+  
+  --spacing-sm: 8px;
+  --spacing-base: 16px;
+  --spacing-lg: 24px;
+  --spacing-section: 64px;
+  
+  --shadow-hover: rgba(0, 0, 0, 0.02) 0 0 0 1px, rgba(0, 0, 0, 0.04) 0 2px 6px 0, rgba(0, 0, 0, 0.1) 0 4px 8px 0;
+}
+
+/* --- Reset & Base Styles --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- Navigation (Top Nav) --- */
+.top-nav {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--spacing-lg);
+  border-bottom: 1px solid var(--color-hairline);
+  background-color: var(--color-canvas);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--rounded-full);
+  background-color: var(--color-primary);
+  /* TODO: 실제 캐릭터 이미지 URL로 변경 (예: background-image: url('my-character.png');) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.brand .logo {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-ink);
+  letter-spacing: -0.44px;
+}
+
+.top-nav-links a {
+  font-size: 16px;
+  font-weight: 600;
+  margin-left: var(--spacing-lg);
+  color: var(--color-muted);
+  transition: color 0.2s;
+}
+
+.top-nav-links a:hover, .top-nav-links a.active {
+  color: var(--color-ink);
+}
+
+/* --- Main Layout --- */
+main {
+  max-width: 1128px;
+  margin: 0 auto;
+  padding: var(--spacing-section) var(--spacing-lg);
+}
+
+/* --- About Section (Host Card Style) --- */
+.host-card {
+  background-color: var(--color-canvas);
+  border: 1px solid var(--color-hairline);
+  border-radius: var(--rounded-md);
+  padding: 24px;
+  max-width: 800px;
+  margin-bottom: var(--spacing-section);
+}
+
+.host-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: var(--spacing-lg);
+}
+
+.host-avatar-lg {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--rounded-full);
+  background-color: var(--color-primary);
+  /* TODO: 실제 본인 사진이나 아바타 URL로 변경 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.host-title-group h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-bottom: 4px;
+  letter-spacing: -0.44px;
+}
+
+.host-meta {
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.host-body {
+  font-size: 16px;
+  color: var(--color-body);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-lg);
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  font-size: 16px;
+  font-weight: 500;
+  padding: 13px 23px;
+  border: 1px solid var(--color-ink);
+  border-radius: var(--rounded-sm);
+  transition: background-color 0.2s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-surface-soft);
+}
+
+/* --- Projects Section (Flexbox) --- */
+.section-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: var(--spacing-lg);
+  letter-spacing: -0.44px;
+}
+
+/* Grid를 대체하는 Flexbox 컨테이너 */
+.project-container {
+  display: flex;
+  flex-wrap: wrap; /* 요소가 넘치면 다음 줄로 넘김 */
+  gap: 24px;
+}
+
+/* 개별 카드 Flexbox 속성 */
+.project-card {
+  /* 늘어나고(1), 줄어들고(1), 기본 너비(300px) 설정 */
+  flex: 1 1 300px;
+  /* 한 줄에 최대 3개까지만 배치되도록 최대 너비 제한 (gap 24px를 2개 뺐을 때의 1/3 비율) */
+  max-width: calc(33.333% - 16px);
+  
+  background-color: var(--color-canvas);
+  border-radius: var(--rounded-md);
+  transition: box-shadow 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.card-image {
+  width: 100%;
+  height: 220px;
+  background-color: var(--color-surface-soft);
+  border-radius: var(--rounded-md);
+  margin-bottom: var(--spacing-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* 카드 내용이 짧아도 높이를 채움 */
+}
+
+.card-content h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: var(--color-ink);
+}
+
+.card-content p {
+  font-size: 14px;
+  color: var(--color-muted);
+  line-height: 1.43;
+  margin-bottom: var(--spacing-sm);
+}
+
+.tech-stack {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: auto; /* 태그들을 카드 맨 아래로 밀어냄 */
+}
+
+.tech-tag {
+  font-size: 12px;
+  font-weight: 600;
+  background-color: var(--color-surface-soft);
+  padding: 4px 10px;
+  border-radius: var(--rounded-full);
+  color: var(--color-ink);
+}
+
+/* 반응형 (모바일 환경 대응) */
+@media (max-width: 768px) {
+  .project-card {
+    /* 모바일에서는 카드가 한 줄을 모두 차지하도록 제한 해제 */
+    max-width: 100%;
+  }
+}
+
+/* --- Footer --- */
+footer {
+  border-top: 1px solid var(--color-hairline);
+  padding: 48px var(--spacing-lg);
+  margin-top: var(--spacing-section);
+  background-color: var(--color-canvas);
+}
+
+.footer-content {
+  max-width: 1128px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  font-size: 14px;
+  color: var(--color-ink);
+}
+
+.legal-text {
+  color: var(--color-muted);
+  margin-top: var(--spacing-sm);
+  font-size: 13px;
+}
+
+/* 이미지 통제용 CSS */
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 이미지가 찌그러지지 않고 정해진 영역을 꽉 채우도록 자릅니다 */
+  border-radius: var(--rounded-md); /* 에어비앤비 스타일 카드 모서리 반경에 맞게 깎습니다 */
+}
